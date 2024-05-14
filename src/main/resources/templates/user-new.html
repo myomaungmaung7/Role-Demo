@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: html_head"/>
+<body>
+  <div th:replace="fragments/layout.html :: menu"/>
+  <div th:replace="fragments/layout.html :: header"/> 
+
+  <h3>Add User</h3>
+    <form action="#" th:action="@{/admin/user/save}" method="post" th:object="${user}"
+    enctype="multipart/form-data">
+		<table  cellpadding="10" align="center">
+       <tr>
+		  <td> <label>User name:</label></td>
+          <td> <input type="text" th:field="*{userName}" /></td>
+         
+	   </tr> 
+        
+          <tr>
+        <td><label>Password:</label></td>
+        <td><input type="password" th:field="*{password}" /></td>
+        
+        </tr>
+        <tr>
+       <td> <label>Photo: </label></td>
+    <td><input type="file"  accept="image/png, image/jpg, image/jpeg" th:field="*{file}" /></td>
+    </tr>
+       <tr>
+		   <td>
+	
+        <button type="submit">Submit</button>    </td>
+         </tr>
+        </table>  
+    </form>
+</div>
+</div>
+
+</body>
+</html>
